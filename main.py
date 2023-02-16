@@ -2,7 +2,7 @@ from arrays import subsequence_test
 from arrays import two_number_sum_test
 from recursion import nth_fib_num_test
 from linked_lists import linked_list_remove_duplicates_test
-from strings import is_palindrome_test
+import strings
 from searching import binary_search_test
 from binary_trees import node_depths_test
 from graphs import depth_first_search_test
@@ -16,5 +16,5 @@ if __name__ == '__main__':
     # is_palindrome_test()
     # binary_search_test()
     # node_depths_test()
-    depth_first_search_test()
-
+    #depth_first_search_test()
+    strings.first_non_repeating_char_test()
