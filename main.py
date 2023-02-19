@@ -3,7 +3,7 @@ from arrays import two_number_sum_test
 from recursion import nth_fib_num_test
 from linked_lists import linked_list_remove_duplicates_test
 import strings
-from searching import binary_search_test
+import searching
 from binary_trees import node_depths_test
 from graphs import depth_first_search_test
 
@@ -17,4 +17,5 @@ if __name__ == '__main__':
     # binary_search_test()
     # node_depths_test()
     #depth_first_search_test()
-    strings.first_non_repeating_char_test()
+    #strings.first_non_repeating_char_test()
+    searching.find_three_largest_numbers_test()

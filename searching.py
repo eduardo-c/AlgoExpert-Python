@@ -31,3 +31,16 @@ def binary_search_test():
     array = [0, 1, 21, 33, 45, 45, 61, 71, 73, 73]
     target = 33
     print(binary_search(array, target))
+
+
+def find_three_largest_numbers(array):
+    largest = array[0:3]
+    for i in array[3:len(array)]:
+        if i > min(largest):
+            largest[largest.index(min(largest))] = i
+    print(sorted(largest))
+
+
+def find_three_largest_numbers_test():
+    array = [141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]
+    find_three_largest_numbers(array)
