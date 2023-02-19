@@ -6,6 +6,7 @@ import strings
 import searching
 from binary_trees import node_depths_test
 from graphs import depth_first_search_test
+import sorting
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -18,4 +19,5 @@ if __name__ == '__main__':
     # node_depths_test()
     #depth_first_search_test()
     #strings.first_non_repeating_char_test()
-    searching.find_three_largest_numbers_test()
+    #searching.find_three_largest_numbers_test()
+    sorting.insertion_sort_test()
