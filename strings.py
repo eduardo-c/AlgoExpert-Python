@@ -37,3 +37,45 @@ def first_non_repeating_char_test():
     print(s)
     print(first_non_repeating_char(s))
 
+
+def run_length_encoding(s):
+    last_char = s[0]
+    count = 1
+    result = ""
+    for i in range(1, len(s)):
+        if s[i] != last_char:
+            mod = count % 9
+            div = int(count / 9)
+            for j in range(0, div):
+                result += "{}{}".format(9, last_char)
+            if mod > 0:
+                result += "{}{}".format(mod, last_char)
+            count = 1
+        else:
+            count += 1
+        last_char = s[i]
+    if count == 1:
+        result += "1{}".format(last_char)
+    else:
+        mod = count % 9
+        div = int(count / 9)
+        for j in range(0, div):
+            result += "{}{}".format(9, last_char)
+        if mod > 0:
+            result += "{}{}".format(mod, last_char)
+    return result
+
+
+def run_length_encoding_test():
+    message = "AAAAAAAAAAAAABBCCCCDD"
+    print(message)
+    encoded = run_length_encoding(message)
+    print(encoded)
+    message = "aA"
+    print(message)
+    encoded = run_length_encoding(message)
+    print(encoded)
+    message = "........______=========AAAA   AAABBBB   BBB"
+    print(message)
+    encoded = run_length_encoding(message)
+    print(encoded)

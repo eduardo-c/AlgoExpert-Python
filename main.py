@@ -20,4 +20,5 @@ if __name__ == '__main__':
     #depth_first_search_test()
     #strings.first_non_repeating_char_test()
     #searching.find_three_largest_numbers_test()
-    sorting.insertion_sort_test()
+    #sorting.insertion_sort_test()
+    strings.run_length_encoding_test()
