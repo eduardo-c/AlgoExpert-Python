@@ -7,6 +7,7 @@ import searching
 from binary_trees import node_depths_test
 from graphs import depth_first_search_test
 import sorting
+import stacks
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -21,4 +22,5 @@ if __name__ == '__main__':
     #strings.first_non_repeating_char_test()
     #searching.find_three_largest_numbers_test()
     #sorting.insertion_sort_test()
-    strings.run_length_encoding_test()
+    #strings.run_length_encoding_test()
+    stacks.balanced_brackets_test()
