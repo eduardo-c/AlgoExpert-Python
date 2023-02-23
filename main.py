@@ -8,6 +8,7 @@ from binary_trees import node_depths_test
 from graphs import depth_first_search_test
 import sorting
 import stacks
+import greedy
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -23,4 +24,5 @@ if __name__ == '__main__':
     #searching.find_three_largest_numbers_test()
     #sorting.insertion_sort_test()
     #strings.run_length_encoding_test()
-    stacks.balanced_brackets_test()
+    #stacks.balanced_brackets_test()
+    greedy.minimum_waiting_time_test()
