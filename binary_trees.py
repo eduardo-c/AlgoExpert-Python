@@ -60,3 +60,23 @@ def node_depths(root):
 def node_depths_test():
     root = build_tree()
     print(node_depths(root))
+
+
+def invert_binary_tree(root):
+    q = [root]
+    while q:
+        node = q.pop(0)
+        if node:
+            aux = node.left
+            node.left = node.right
+            node.right = aux
+            q.append(node.left)
+            q.append(node.right)
+
+
+def invert_binary_tree_test():
+    root = build_tree()
+    bfs(root)
+    print()
+    invert_binary_tree(root)
+    bfs(root)
