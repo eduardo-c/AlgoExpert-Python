@@ -27,4 +27,5 @@ if __name__ == '__main__':
     #stacks.balanced_brackets_test()
     # greedy.minimum_waiting_time_test()
     #binary_trees.invert_binary_tree_test()
-    graphs.cycle_in_graph_test()
+    #graphs.cycle_in_graph_test()
+    sorting.quick_sort_test()
