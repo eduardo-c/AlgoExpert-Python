@@ -5,7 +5,7 @@ from linked_lists import linked_list_remove_duplicates_test
 import strings
 import searching
 import binary_trees
-from graphs import depth_first_search_test
+import graphs
 import sorting
 import stacks
 import greedy
@@ -26,4 +26,5 @@ if __name__ == '__main__':
     #strings.run_length_encoding_test()
     #stacks.balanced_brackets_test()
     # greedy.minimum_waiting_time_test()
-    binary_trees.invert_binary_tree_test()
+    #binary_trees.invert_binary_tree_test()
+    graphs.cycle_in_graph_test()

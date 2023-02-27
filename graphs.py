@@ -32,3 +32,41 @@ def depth_first_search_test():
     g.depth_first_search(a)
     print(a)
 
+
+NOT_VISITED, VISITED, DISCARDED = 0, 1, 2
+
+
+def cycle_in_graph(edges):
+    """
+    :param edges: Adjacency list that represents a graph
+    :return: True if any cycle is found on graph, False otherwise
+    """
+    number_of_nodes = len(edges)
+    status = [NOT_VISITED for _ in range(0, number_of_nodes)]
+    for node in range(0, number_of_nodes):
+        if status[node] != NOT_VISITED:
+            continue
+        contains_cycle = traverse_node(node, edges, status)
+        if contains_cycle:
+            return True
+    return False
+
+
+def traverse_node(node, edges, status):
+    status[node] = VISITED
+    children = edges[node]
+    for child in children:
+        if status[child] == VISITED:
+            return True
+        if status[child] != NOT_VISITED:
+            continue
+        contains_cycle = traverse_node(child, edges, status)
+        if contains_cycle:
+            return True
+    status[node] = DISCARDED
+    return False
+
+
+def cycle_in_graph_test():
+    edges = [[1, 3], [2, 3, 4], [0], [], [2, 5], []]
+    print(cycle_in_graph(edges))
