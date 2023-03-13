@@ -11,6 +11,33 @@ class Node:
         return self.children[i]
 
     def depth_first_search(self, array):
+        """
+        You're given a Node class that has a name and an array of optional children
+        nodes. When put together, nodes form an acyclic tree like structure.
+
+        Implement the depth_firsth_search method on the Node class, which takes in an
+        empty array, traverses the tree using the Depth-first Search approach
+        (specifically navigating the tree from left to right), stores all of the nodes'
+        names in the input array, and returns it.
+
+        Sample Input:
+                         A
+                     /   |   \
+                    B    C    D
+                   / \        / \
+                  E  F       G   H
+                    / \       \
+                   I  J        K
+
+        Sample Output: ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
+
+        Optimal Space & Time Complexity
+        O(v + e) time | O(v) space - where v is the number of vertices of the input
+        graph and e is the number of edges of the input graph
+
+        :param array: children array of current node
+        :return:
+        """
         array.append(self.name)
         for i in self.children:
             i.depth_first_search(array)
@@ -38,6 +65,47 @@ NOT_VISITED, VISITED, DISCARDED = 0, 1, 2
 
 def cycle_in_graph(edges):
     """
+    Your're given a list of edges  representing an unweighted, directed graph with at least
+    one node. Write a function that returns a boolean representing whether the given graph
+    contains a cycle.
+
+    For the purpose of this question, a cycle is defined as any number of vertices, including
+    just one vertex, that are connected in a closed chain. A cycle can also be defined as a
+    chain of at least one vertex in which the first vertex is the same as the last.
+
+    The given list is what's called an adjacency list, and it represents a graph. The number
+    of vertices in the graph is equal to the length of edges, where each index i in edges contains
+    vertex i's outbound edges, in no particular order. Each individual edge is represented
+    by a positive integer that denotes an index (a destination vertex) in the list that this
+    vertex is connected to. Note that these edges are directed, meaning that you can only travel
+    from a particular vertex to its destination, not the other way around (unless the destination
+    vertex itself has an outbound edge to the original vertex).
+
+    Also note that this graph may contain self-loops. A self-loop is an edge that has the same
+    destination and origin; in other words, it's an edge that connects a vertex to itself.
+    For the purpose of this question, a self-loop is considered a cycle.
+
+    Sample Input:
+    edges  = [
+        [1, 3],
+        [2, 3, 4],
+        [0],
+        [],
+        [2, 5],
+        [],
+    ]
+
+    Sample Output: true
+    // There are multiple cycles in this graph:
+    // 1) 0 -> 1 -> 2 -> 0
+    // 2) 0 -> 1 -> 4 -> 2 -> 0
+    // 3) 1 -> 2 -> 0 -> 1
+    // These are just 3 examples; there are more.
+
+    Optimal Space & Time Complexity
+    O(v + e) time | O(v) space - where v is the number of vertices and e is the number of
+    edges in the graph
+
     :param edges: Adjacency list that represents a graph
     :return: True if any cycle is found on graph, False otherwise
     """

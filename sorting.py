@@ -1,6 +1,24 @@
 
 
 def insertion_sort(array):
+    """
+    Write a function that takes in an array of integers and returns a sorted version of
+    that array. Use the Insertion Sort algorithm to sort the array.
+
+    Sample Input:
+    array = [8, 5, 2, 9, 5, 6, 3]
+
+    Sample Output:
+    [2, 3, 5, 5, 6, 8, 9]
+
+    Optimal Space & Time Complexity
+    Best: O(n) time | O(1) space - where n is the length of the input array
+    Average: O(n^2) time | O(1) space - where n is the length of the input array
+    Worst: O(n^2) time | O(1) space - where n is the length of the input array
+
+    :param array:
+    :return:
+    """
     for i in range(1, len(array)):
         inserted = i
         while inserted > 0 and array[inserted] < array[inserted - 1]:
@@ -18,6 +36,26 @@ def insertion_sort_test():
 
 
 def quick_sort(array, start_idx, end_idx):
+    """
+    Write a function that takes in an array of integers and returns a sorted version of
+    that array. Use the Quick Sort algorithm to sort the array.
+
+    Sample Input:
+    array = [8, 5, 2, 9, 5, 6, 3]
+
+    Sample Output:
+    [2, 3, 5, 5, 6, 8, 9]
+
+    Optimal Space & Time Complexity
+    Best: O(nlog(n)) time | O(log(n)) space - where n is the length of the input array
+    Average: O(nlog(n)) time | O(log(n)) space - where n is the length of the input array
+    Worst: O(n^2) time | O(log(n)) space - where n is the length of the input array
+
+    :param array:
+    :param start_idx:
+    :param end_idx:
+    :return:
+    """
     if start_idx >= end_idx:
         return
     pivot = start_idx

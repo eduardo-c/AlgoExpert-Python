@@ -39,6 +39,23 @@ def bfs_test():
 
 
 def node_depths(root):
+    """
+    The distance between a node in a Binary Tree and the tree's root is called the
+    node's depth.
+
+    Write a function that takes in a Binary Tree and returns the sum of its nodes'
+    depths.
+
+    Each BinaryTree node has an integer value, a left child node, and a right child node.
+    Children nodes can either be BinaryTree nodes themselves or None
+
+    Optimal Space & Time Complexity
+    Average case: when the tree is balanced O(n) time | O(h) space - where n is
+    the number of nodes in the Binary Tree and h is the height of the Binary Tree
+
+    :param root: tree root
+    :return: Total sum of every node depth
+    """
     if not root:
         return 0
     current_level = [root]
@@ -63,6 +80,39 @@ def node_depths_test():
 
 
 def invert_binary_tree(root):
+    """
+    Write a function that takes in a Binary Tree and inverts it. In other words,
+    the function should swap every left node in the tree for its corresponding
+    right node.
+
+    Each BinaryTree node has an integer value, a left child node, and a right child node.
+    Children nodes can either be BinaryTree nodes themselves or None
+
+    Sample Input:
+    root =      1
+               / \
+              2   3
+             / \  / \
+            4  5 6  7
+           / \
+          8   9
+
+    Sample Output:
+                  1
+               /     \
+              3       2
+             / \      / \
+            7  6      5  4
+           / \ / \   / \ / \
+                         9  8
+
+    Optimal Space & Time Complexity
+    O(n) time | O(d) space - where n is the number of nodes in the Binary
+    Tree and d is the depth (height) of the Binary Tree
+
+    :param root: tree root
+    :return:
+    """
     q = [root]
     while q:
         node = q.pop(0)
